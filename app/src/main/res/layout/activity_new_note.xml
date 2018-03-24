@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="today.wander.notes.ui.newnote.NewNoteActivity">
+
+    <data>
+
+        <variable
+            name="newNote"
+            type="today.wander.notes.ui.newnote.NewNoteViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <EditText
+            style="@style/Base.TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="@string/hint_title"
+            android:maxLength="30"
+            android:maxLines="1"
+            android:padding="5dp"
+            android:text="@={newNote.title}"
+            android:textColor="@android:color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+        <EditText
+            style="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/hint_content"
+            android:maxLength="300"
+            android:padding="5dp"
+            android:scrollbars="vertical"
+            android:text="@={newNote.text}" />
+    </LinearLayout>
+
+</layout>
